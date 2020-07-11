@@ -1,0 +1,47 @@
+:root {
+    --primary: #009432;
+    --secondary: #A3CB38;
+    --tertiary: #C4E538;
+    
+}
+.topTitle {
+    background-color: var(--secondary);
+}
+.weatherTitle {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    
+
+
+}
+.topTime {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+   
+
+}
+
+.card-header {
+    font-family: 'Didact Gothic', sans-serif;
+    color: var(--secondary);
+    background-color: var(--primary);
+}
+
+.styling {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--tertiary);
+    margin: 10px;
+    
+}
+.second {
+    font-family: 'Montserrat', sans-serif;
+    border: 3px solid var(--primary);
+    margin: 10px;
+}
+h4 {
+    color:red;
+}
+
