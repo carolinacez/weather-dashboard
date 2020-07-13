@@ -1,6 +1,4 @@
 // http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=c8c5256ce849050cb1979747a81a6753
-// var currentDay = document.getElementById("toDay");
-// currentDay.innerHTML = moment().format('MM/DD/YYYY');
 function displayTime() {
     var time = moment().format("MMMM Do YYYY")
     $("#toDay").html(time);
@@ -65,7 +63,7 @@ function searchWeather() {
         // boxStyle.append(boxStyleMain);
         // boxStyleMain.append(humidity);
         let latitudeEl = response.coord.lat
-        let longitudeEl = response.coord.lat
+        let longitudeEl = response.coord.lon
         secondApi(latitudeEl , longitudeEl);
         
         
@@ -94,8 +92,9 @@ function secondApi(latitudeEl , longitudeEl){
 
                 let humidity = $("<p>").text(" Humidity : " + response.daily[i].humidity);
                 
-                let dailyDate =$("<p>").html(response.daily[i].dt);
-                let time = moment().format("DD-MM-YYYY");
+                // let dailyDate =$("<p>").html(response.daily[i].dt);
+                let time = moment().add(i , "days").format("MM-DD-YYYY");
+                
                 
                 
                 let card = $("<div>").addClass("card col-5 second"); 
@@ -121,9 +120,15 @@ function secondApi(latitudeEl , longitudeEl){
 
 }
 
+// function storeItems(){
+//     let store = ("#city").val();
+//     localStorage.setItem(store);
+// }
+
 
 $("#search").on("click" , function(){
     searchWeather();
+    storeItems();
     
 })
 displayTime();
